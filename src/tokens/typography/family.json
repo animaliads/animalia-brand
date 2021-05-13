@@ -1,0 +1,15 @@
+{
+  "font": {
+    "family": {
+      "heading": {
+        "value": "Inter"
+      },
+      "text": {
+        "value": "Inter"
+      },
+      "code": {
+        "value": "monospace"
+      }
+    }
+  }
+}

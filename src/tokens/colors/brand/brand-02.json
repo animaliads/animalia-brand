@@ -1,0 +1,27 @@
+{
+  "color": {
+    "brand-02": {
+      "lightest": {
+        "value": "#EDF7EF"
+      },
+      "lighter": {
+        "value": "#DCEFDF"
+      },
+      "light": {
+        "value": "#B9DFBF"
+      },
+      "base": {
+        "value": "#8DC897"
+      },
+      "dark": {
+        "value": "#50955C"
+      },
+      "darker": {
+        "value": "#325D39"
+      },
+      "darkest": {
+        "value": "#18391E"
+      }
+    }
+  }
+}
