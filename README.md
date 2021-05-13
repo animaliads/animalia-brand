@@ -11,7 +11,13 @@ Atualmente, é gerado os tokens para a seguinte tecnologia:
 Você precisa ter instalado na sua máquina o [NodeJS](https://nodejs.org/en/).
 
 Depois de já ter instalado o NodeJS, você precisa baixar o repositório.
-E depois executar o seguinte comando:
+E executar o comando na pasta do repositório:
+
+```
+npm install
+```
+
+Para instalar as dependências. E depois executar o seguinte comando:
 
 ```
 npm run build
