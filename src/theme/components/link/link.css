@@ -1,0 +1,13 @@
+ani-link {
+    --font-family: var(--font-family-text);
+    --text-color: var(--color-action-default);
+
+    --text-color-hover: var(color-action-hover);
+
+    --text-color-focus: var(--color-action-default);
+    --outline-color-focused: var(--color-action-focus);
+
+    --text-color-pressed: var(--color-action-pressed);
+
+    --text-color-visited: var(--color-action-pressed);
+}
