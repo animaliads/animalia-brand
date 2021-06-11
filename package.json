@@ -6,7 +6,7 @@
   "tag": "dev",
   "scripts": {
     "build": "gulp",
-    "publish": "npm publish dist --access public"
+    "publish": "npm publish ./dist --access public"
   },
   "repository": {
     "type": "git",
