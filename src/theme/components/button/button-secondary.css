@@ -24,7 +24,7 @@ ani-button[kind="secondary"] {
     --outline-color-focused: var(--color-action-focus);
 }
 
-ani-button[kind="secondary"][danger] {
+ani-button[kind="secondary"][danger="true"] {
     --text-color: var(--color-feedback-negative-dark);
     --border-color: var(--color-feedback-negative-dark);
 

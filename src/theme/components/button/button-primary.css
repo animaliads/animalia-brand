@@ -20,7 +20,7 @@ ani-button[kind="primary"] {
     --outline-color-focused: var(--color-action-focus);
 }
 
-ani-button[kind="primary"][danger] {
+ani-button[kind="primary"][danger="true"] {
     --text-color: var(--color-neutral-light-00);
     --background: var(--color-feedback-negative-dark);
 
