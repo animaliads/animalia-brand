@@ -2,7 +2,6 @@
 ani-button[kind="secondary"] {
     --text-color: var(--color-action-default);
     --border-color: var(--color-action-default);
-    --border-width: var(--border-width-lg);
 
     /* hover */
     --text-color-hover: var(--color-brand-01-darkest);
