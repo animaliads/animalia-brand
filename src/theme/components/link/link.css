@@ -4,11 +4,9 @@ ani-link {
 
     --text-color-hover: var(--color-action-hover);
 
-    --text-color-focus: var(--color-action-default);
     --outline-color-focused: var(--color-action-focus);
 
     --text-color-pressed: var(--color-action-pressed);
-    --outline-color-pressed: var(--color-action-focus);
     
     --text-color-visited: var(--color-action-pressed);
 }
