@@ -7,7 +7,8 @@ const { generateTokens } = require('./build');
 const postcss = require('gulp-postcss');
 var cssnano = require('cssnano');
 const atImport = require('postcss-import');
-var concat = require('gulp-concat');
+const concat = require('gulp-concat');
+const cssvariables = require('postcss-css-variables');
 
 const buildDestTheme = 'dist/theme';
 const buildDestTypography = 'dist/typography';
@@ -68,11 +69,17 @@ function buildComponents(cb) {
 }
 
 function buildTypography(cb) {
-  src('./src/helpers/typography/**/**.css')
+  src('./src/helpers/typography/src/index.css')
   .pipe(
     postcss([
       atImport(),
-      cssnano(),
+      cssvariables({
+        preserve: (variable) => {
+          console.log(variable);
+          return false;
+        }
+      }),
+      // cssnano(),
     ])
   )
   .pipe(concat('index.css'))
@@ -86,10 +93,10 @@ function buildTypography(cb) {
 exports.build = build;
 exports.default = series(
   clean,
-  build,
-  buildComponents,
-  copyThemeAssets,
-  copyThemePackageJson,
-  cleanTemp,
+  // build,
+  // buildComponents,
+  // copyThemeAssets,
+  // copyThemePackageJson,
+  // cleanTemp,
   buildTypography
 );
