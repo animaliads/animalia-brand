@@ -1,0 +1,21 @@
+ani-button {
+    --font-family: var(--font-family-text);
+    --font-size: var(--font-size-default);
+    --font-weight: var(--font-weight-bold);
+    --line-height: var(--line-height-4xl);
+    --border-radius: var(--border-radius-md);
+    --spacing-squish: var(--spacing-squish-md);
+    --border-width: var(--border-width-md);
+}
+
+ani-button[size="small"] {
+    --font-size: var(--font-size-sm);
+    --line-height: var(--line-height-xl);
+    --spacing-squish: var(--spacing-squish-xs);
+}
+
+ani-button[size="large"] {
+    --font-size: var(--font-size-default);
+    --line-height: var(--line-height-4xl);
+    --spacing-squish: var(--spacing-squish-lg);
+}

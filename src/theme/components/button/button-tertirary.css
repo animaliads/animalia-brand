@@ -1,0 +1,20 @@
+ani-button[kind="tertiary"] {
+    --text-color: var(--color-action-default);
+
+    /* hover */
+    --text-color-hover: var(--color-brand-01-darkest);
+    --background-hover: var(--color-brand-01-lighter);
+
+    /* focused */
+    --outline-color-focused: var(--color-action-focus);
+
+    /* pressed */
+    --text-color-pressed: var(--color-brand-01-darkest);
+    --background-pressed: var(--color-brand-01-light);
+    --outline-color-focused: var(--color-action-focus);
+
+    /* disabled */
+    --text-color-disabled: var(--color-neutral-light-30);
+    --outline-color-focused: var(--color-action-focus);
+}
+

@@ -1,0 +1,15 @@
+{
+  "source": ["src/tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./.temp/",
+      "files": [
+        {
+          "destination": "brand-tokens.css",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}
