@@ -1,0 +1,10 @@
+body {
+    font-family: var(--font-family-heading, "'Arial', sans-serif");
+    color: var(color-neutral-dark-90, '#1D1D30');
+
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-1);
+    text-align: left;
+}

@@ -9,7 +9,8 @@ var cssnano = require('cssnano');
 const atImport = require('postcss-import');
 var concat = require('gulp-concat');
 
-const buildDest = 'dist';
+const buildDestTheme = 'dist/theme';
+const buildDestTypography = 'dist/typography';
 const themeFileName = 'theme.css';
 
 function clean(cb) {
@@ -27,8 +28,8 @@ function build(cb) {
   cb();
 }
 
-function copyPackageJson(cb) {
-  src('package.json')
+function copyPackageJson(filename, path, destFile) {
+  src(`${path}/package.json`)
     .pipe(
       tap(file => {
         const contents = JSON.parse(file.contents.toString());
@@ -36,19 +37,22 @@ function copyPackageJson(cb) {
         delete contents.devDependencies;
         delete contents.scripts;
 
-        contents.main = themeFileName;
+        contents.main = filename;
 
         file.contents = Buffer.from(JSON.stringify(contents, null, 2), 'utf-8');
       })
     )
-    .pipe(dest(buildDest));
-
-  cb();
+    .pipe(dest(destFile));
 
 }
 
+function copyThemePackageJson(cb) {
+  copyPackageJson(themeFileName, '.', buildDestTheme)
+  cb();
+}
+
 const copyThemeAssets = () =>
-  src('./src/theme/assets/**/*.*').pipe(dest(buildDest));
+  src('./src/theme/assets/**/*.*').pipe(dest(buildDestTheme));
 
 function buildComponents(cb) {
   src(['./.temp/**/**.css', './src/theme/**/**.css'])
@@ -59,15 +63,33 @@ function buildComponents(cb) {
       ])
     )
     .pipe(concat(themeFileName))
-    .pipe(dest(buildDest))
+    .pipe(dest(buildDestTheme))
   cb()
 }
+
+function buildTypography(cb) {
+  src('./src/helpers/typography/**/**.css')
+  .pipe(
+    postcss([
+      atImport(),
+      cssnano(),
+    ])
+  )
+  .pipe(concat('index.css'))
+  .pipe(dest(buildDestTypography))
+
+  copyPackageJson('index.css', './src/helpers/typography', buildDestTypography);
+
+  cb()
+}
+
 exports.build = build;
 exports.default = series(
   clean,
   build,
   buildComponents,
   copyThemeAssets,
-  copyPackageJson,
-  cleanTemp
+  copyThemePackageJson,
+  cleanTemp,
+  buildTypography
 );
