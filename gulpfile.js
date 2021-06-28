@@ -8,10 +8,8 @@ const postcss = require('gulp-postcss');
 var cssnano = require('cssnano');
 const atImport = require('postcss-import');
 const concat = require('gulp-concat');
-const cssvariables = require('postcss-css-variables');
 
 const buildDestTheme = 'dist/theme';
-const buildDestTypography = 'dist/typography';
 const themeFileName = 'theme.css';
 
 function clean(cb) {
@@ -24,12 +22,12 @@ function cleanTemp(cb) {
   cb();
 }
 
-function build(cb) {
+function generateTokens(cb) {
   generateTokens();
   cb();
 }
 
-function copyPackageJson(filename, path, destFile) {
+function copyPackageJson(cb, filename, path, destFile) {
   src(`${path}/package.json`)
     .pipe(
       tap(file => {
@@ -45,58 +43,75 @@ function copyPackageJson(filename, path, destFile) {
     )
     .pipe(dest(destFile));
 
+  cb();
+
 }
 
-function copyThemePackageJson(cb) {
-  copyPackageJson(themeFileName, '.', buildDestTheme)
-  cb();
-}
 
 const copyThemeAssets = () =>
   src('./src/theme/assets/**/*.*').pipe(dest(buildDestTheme));
 
-function buildComponents(cb) {
-  src(['./.temp/**/**.css', './src/theme/**/**.css'])
+
+function generateThemePackageJson(cb) {
+  copyPackageJson(cb, themeFileName, '.', buildDestTheme);
+}
+
+function generateThemeBunddle(cb) {
+  generateBunddle(
+    cb,
+    ['./.temp/**/**.css', './src/theme/**/**.css'],
+    themeFileName,
+    buildDestTheme
+  );
+
+  cb();
+}
+
+function generateBunddle(cb, input, fileName, buildDest) {
+  src(input)
     .pipe(
       postcss([
         atImport(),
         cssnano(),
       ])
     )
-    .pipe(concat(themeFileName))
-    .pipe(dest(buildDestTheme))
-  cb()
+    .pipe(concat(fileName))
+    .pipe(dest(buildDest));
+
+  cb();
 }
 
-function buildTypography(cb) {
-  src('./src/helpers/typography/src/index.css')
-  .pipe(
-    postcss([
-      atImport(),
-      cssvariables({
-        preserve: (variable) => {
-          console.log(variable);
-          return false;
-        }
-      }),
-      // cssnano(),
-    ])
-  )
-  .pipe(concat('index.css'))
-  .pipe(dest(buildDestTypography))
+function generateBunddleHelpers(cb) {
+  const helpers = ['typography'];
 
-  copyPackageJson('index.css', './src/helpers/typography', buildDestTypography);
+  helpers.forEach(helper => {
+    const buildDest = `dist/${helper}`;
+    const inputFiles = `./src/helpers/${helper}/src/index.css`;
 
-  cb()
+    generateBunddle(
+      cb,
+      inputFiles,
+      'index.css',
+      buildDest
+    );
+
+    copyPackageJson(cb, 'index.css', `./src/helpers/${helper}`, buildDest);
+  });
+
+  cb();
 }
 
-exports.build = build;
+
+const generateBunddleTheme = series(
+  generateThemeBunddle,
+  copyThemeAssets,
+  generateThemePackageJson
+)
+
 exports.default = series(
   clean,
-  // build,
-  // buildComponents,
-  // copyThemeAssets,
-  // copyThemePackageJson,
-  // cleanTemp,
-  buildTypography
+  generateTokens,
+  generateBunddleTheme,
+  cleanTemp,
+  generateBunddleHelpers
 );
