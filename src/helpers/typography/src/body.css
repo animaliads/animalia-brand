@@ -1,6 +1,6 @@
 body {
-    font-family: var(--font-family-heading, "'Arial', sans-serif");
-    color: var(color-neutral-dark-90, '#1D1D30');
+    font-family: var(--font-family-heading, 'Arial', sans-serif);
+    color: var(--color-neutral-dark-90, '#1D1D30');
 
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size-default);
