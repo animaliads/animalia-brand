@@ -22,13 +22,8 @@ function cleanTemp(cb) {
   cb();
 }
 
-function generateTokens(cb) {
-  generateTokens();
-  cb();
-}
-
-function copyPackageJson(cb, filename, path, destFile) {
-  src(`${path}/package.json`)
+function copyPackageJson(filename, path, destFile) {
+  return src(`${path}/package.json`)
     .pipe(
       tap(file => {
         const contents = JSON.parse(file.contents.toString());
@@ -42,9 +37,6 @@ function copyPackageJson(cb, filename, path, destFile) {
       })
     )
     .pipe(dest(destFile));
-
-  cb();
-
 }
 
 
@@ -52,23 +44,20 @@ const copyThemeAssets = () =>
   src('./src/theme/assets/**/*.*').pipe(dest(buildDestTheme));
 
 
-function generateThemePackageJson(cb) {
-  copyPackageJson(cb, themeFileName, '.', buildDestTheme);
+function generateThemePackageJson() {
+  return copyPackageJson(themeFileName, '.', buildDestTheme);
 }
 
-function generateThemeBunddle(cb) {
-  generateBunddle(
-    cb,
+function generateThemeBunddle() {
+  return generateBunddle(
     ['./.temp/**/**.css', './src/theme/**/**.css'],
     themeFileName,
     buildDestTheme
   );
-
-  cb();
 }
 
-function generateBunddle(cb, input, fileName, buildDest) {
-  src(input)
+function generateBunddle(input, fileName, buildDest) {
+  return src(input)
     .pipe(
       postcss([
         atImport(),
@@ -77,36 +66,36 @@ function generateBunddle(cb, input, fileName, buildDest) {
     )
     .pipe(concat(fileName))
     .pipe(dest(buildDest));
-
-  cb();
 }
 
-function generateBunddleHelpers(cb) {
+function generateBunddleHelpers() {
   const helpers = ['typography'];
+  const bunddleFileName = 'index.css';
 
   helpers.forEach(helper => {
     const buildDest = `dist/${helper}`;
     const inputFiles = `./src/helpers/${helper}/src/index.css`;
 
     generateBunddle(
-      cb,
       inputFiles,
-      'index.css',
+      bunddleFileName,
       buildDest
     );
 
-    copyPackageJson(cb, 'index.css', `./src/helpers/${helper}`, buildDest);
+    copyPackageJson(bunddleFileName, `./src/helpers/${helper}`, buildDest);
   });
 
-  cb();
-}
+  return Promise.resolve();
+};
 
 
 const generateBunddleTheme = series(
   generateThemeBunddle,
   copyThemeAssets,
   generateThemePackageJson
-)
+);
+
+
 
 exports.default = series(
   clean,
