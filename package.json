@@ -8,7 +8,7 @@
     "build": "gulp",
     "publish:theme": "npm publish ./dist/theme --access public",
     "publish:typo": "npm publish ./dist/typography --access public",
-    "publish:all": "npm publish:theme && npm run publish:typo"
+    "publish:all": "npm run publish:theme && npm run publish:typo"
   },
   "repository": {
     "type": "git",
