@@ -11,6 +11,7 @@ const concat = require('gulp-concat');
 
 const buildDestTheme = 'dist/theme';
 const themeFileName = 'theme.css';
+const MAIN_VERSION = process.env.npm_package_version;
 
 function clean(cb) {
   del.sync('./dist');
@@ -32,6 +33,9 @@ function copyPackageJson(filename, path, destFile) {
         delete contents.scripts;
 
         contents.main = filename;
+
+        contents.version = MAIN_VERSION;
+
 
         file.contents = Buffer.from(JSON.stringify(contents, null, 2), 'utf-8');
       })

@@ -1,11 +1,9 @@
 {
   "name": "@animaliads/typography",
-  "version": "1.0.0",
+  "version": "0.0.0-PLACEHOLDER",
+  "tag": "dev",
   "description": "Definições globais de tipografia do Animalia DS",
   "main": "index.css",
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@animaliads/css-tokens": "^1.0.0"
-  }
+  "license": "ISC"
 }
