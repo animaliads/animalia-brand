@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     line-height: var(--line-height-sm);
     letter-spacing: var(--letter-spacing-neg-2);
 }

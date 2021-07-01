@@ -1,6 +1,6 @@
 {
   "name": "@animaliads/animalia-brand",
-  "version": "1.0.0",
+  "version": "1.1.0-dev.1",
   "description": "Brand tokens da marca Animalia DS",
   "main": "build.js",
   "tag": "dev",
@@ -33,9 +33,7 @@
     "postcss": "^8.2.9",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.0.2",
-    "style-dictionary": "^2.10.2"
-  },
-  "dependencies": {
-    "@animaliads/css-tokens": "^1.0.0"
+    "style-dictionary": "^2.10.2",
+    "@animaliads/css-tokens": "^1.1.0-dev.1"
   }
 }
