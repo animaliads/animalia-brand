@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-sm);
-    letter-spacing: var(--letter-spacing-neg-2);
+    letter-spacing: var(--letter-spacing-neg-1);
 }
 
 h2 {
@@ -27,17 +27,17 @@ h3 {
 h4 {
     font-size: var(--font-size-default);
     line-height: var(--line-height-md);
-    letter-spacing: var(--letter-spacing-2);
+    letter-spacing: var(--letter-spacing-auto);
 }
 
 h5 {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-md);
-    letter-spacing: var(--letter-spacing-3);
+    letter-spacing: var(--letter-spacing-1);
 }
 
 h6 {
     font-size: var(--font-size-xs);
     line-height: var(--line-height-md);
-    letter-spacing: var(--letter-spacing-3);
+    letter-spacing: var(--letter-spacing-1);
 }
