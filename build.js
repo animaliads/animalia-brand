@@ -12,6 +12,8 @@ const generateTokens = () => {
 
   const StyleDictionaryExtendedBrands = StyleDictionary.extend('./src/tokens/config.json');
   StyleDictionaryExtendedBrands.buildAllPlatforms();
+
+  return Promise.resolve();
 }
 
 exports.generateTokens = generateTokens;

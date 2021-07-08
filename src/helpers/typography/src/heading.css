@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading, 'Arial', sans-serif);
+    color: var(--color-neutral-dark-90, '#1D1D30');
+
+    font-weight: var(--font-weight-bold);
+    text-align: left;
+}
+
+h1 {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-neg-1);
+}
+
+h2 {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-auto);
+}
+
+h3 {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-auto);
+}
+
+h4 {
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-auto);
+}
+
+h5 {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-1);
+}
+
+h6 {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-1);
+}

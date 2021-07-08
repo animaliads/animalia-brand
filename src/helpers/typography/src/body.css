@@ -1,0 +1,10 @@
+body {
+    font-family: var(--font-family-text, 'Arial', sans-serif);
+    color: var(--color-neutral-dark-90, '#1D1D30');
+
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-auto);
+    text-align: left;
+}
