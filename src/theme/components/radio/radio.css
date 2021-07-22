@@ -1,19 +1,18 @@
 ani-radio {
-    --background: var(--color-neutral-light-00);
-    --border-color: var(--color-action-default);
+    --color-unchecked: var(--color-neutral-light-00);
+    --border-color: var(--color-neutral-dark-70);
 
     /* hover */
-    --shadow-color-hover: 0 0 0 var(--border-width-lg) var(--color-brand-01-lighter);
-
+    --shadow-color-hover: var(--color-brand-01-lighter);
+    --color-hover: var(--color-action-hover);
+    
     /* focus */
     --outline-color-focused: var(--color-action-focus);
 
-    /* selected */
-    --fill-color-selected: var(--color-action-default);
-    --border-color-selected: var(--color-action-default);
+    /* checked */
+    --color-checked: var(--color-action-default);
 
     /* disabled */
-    --background-disabled: var(--color-action-disabled);
-    --border-color-disabled: var(--color-neutral-dark-70);
-    --fill-color-disabled: var(--color-neutral-dark-70);
+    --color-unchecked-disabled: var(--color-action-disabled);
+    --color-checked-disabled: var(--color-neutral-dark-70);
 }
