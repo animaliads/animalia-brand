@@ -1,0 +1,13 @@
+ani-checkbox {
+    --border-color: var(--color-neutral-dark-70);
+    --color-unchecked: var(--color-neutral-light-00);
+    --color-checked: var(--color-action-default);
+
+    --color-hover: var(--color-action-hover);
+    --shadow-color-hover: var(--color-brand-01-lighter);
+
+    --outline-color-focused: var(--color-action-focus);
+
+    --color-unchecked-disabled : var(--color-action-disabled);
+    --color-checked-disabled : var(--color-neutral-dark-70);
+}
