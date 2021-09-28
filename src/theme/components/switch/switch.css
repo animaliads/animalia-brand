@@ -1,0 +1,16 @@
+ani-switch {
+    --color-unchecked: var(--color-neutral-light-00);
+    --border-color: var(--color-neutral-dark-70);
+    --track-unchecked: var(--color-neutral-light-20);
+
+    --color-checked: var(--color-action-default);
+    --track-checked: var(--color-brand-01-light);
+
+    --color-unchecked-hover: var(--color-brand-01-lightest);
+    --color-checked-hover: var(--color-action-hover);
+    
+     --outline-color-focused: var(--color-action-focus);
+
+    --color-unchecked-disabled: var(--color-neutral-light-20);
+    --color-checked-disabled: var(--color-action-disabled);
+}
