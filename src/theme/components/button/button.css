@@ -2,20 +2,57 @@ ani-button {
     --font-family: var(--font-family-text);
     --font-size: var(--font-size-default);
     --font-weight: var(--font-weight-bold);
-    --line-height: var(--line-height-4xl);
+    --line-height: var(--line-height-none);
     --border-radius: var(--border-radius-md);
-    --spacing-squish: var(--spacing-squish-md);
     --border-width: var(--border-width-md);
+    --padding: 0 1em;
+
+    /* danger */
+    --text-color-danger: var(--color-neutral-light-00);
+    --color-danger: var(--color-feedback-negative-dark);
+    --color-danger-hover: var(--color-feedback-negative-darker);
+    --color-danger-pressed: var(--color-feedback-negative-darkest);
+    --background-danger-hover: var(--color-feedback-negative-lighter);
+    --border-color-danger-hover: var(--color-feedback-negative-darkest);
+    --background-danger-pressed: var(--color-feedback-negative-light);
+
+
+    --text-color: var(--color-neutral-light-00);
+    --color: var(--color-action-default);
+    --shadow: var(--shadow-none);
+
+    /* hover */
+    --color-hover: var(--color-action-hover);
+
+    /* focused */
+    --outline-color-focused: var(--color-action-focus);
+
+    /* pressed */
+    --color-pressed: var(--color-action-pressed);
+
+    /* disabled */
+    --text-color-disabled: var(--color-neutral-dark-70);
+    --color-disabled: var(--color-action-disabled);
 }
+
+ani-button[kind="secondary"], ani-button[kind="tertiary"] {
+    --background-hover: var(--color-brand-01-lighter);
+    --border-color-hover: var(--color-brand-01-darkest);
+
+    /* pressed */
+    --background-pressed: var(--color-brand-01-light);
+}
+
 
 ani-button[size="small"] {
     --font-size: var(--font-size-sm);
-    --line-height: var(--line-height-xl);
-    --spacing-squish: var(--spacing-squish-xs);
+    --line-height: var(--line-height-none);
+    --padding: 0 0.5em;
 }
 
 ani-button[size="large"] {
     --font-size: var(--font-size-default);
-    --line-height: var(--line-height-4xl);
-    --spacing-squish: var(--spacing-squish-lg);
+    --line-height: var(--line-height-none);
+    --padding: 0 1.5em;
 }
+         
