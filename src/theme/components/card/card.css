@@ -1,0 +1,7 @@
+ani-card {
+    --border-radius: var(--border-radius-md);
+    --background: var(--color-neutral-light-00);
+    --border-color: var(--color-neutral-light-20);
+    --border-width: var(--border-width-sm);
+    --padding: 1em;
+}
