@@ -4,4 +4,13 @@ ani-card {
     --border-color: var(--color-neutral-light-20);
     --border-width: var(--border-width-sm);
     --padding: 1em;
+
+    --background-selected: var(--color-brand-01-lightest);
+    --border-color-selected: var(--color-action-default);
+
+    --border-color-hover: var(--color-action-hover);
+    --shadow: var(--shadow-lg);
+
+    --color-focused: var(--color-action-default);
+    --outline-color-focused: var(--color-action-focus);
 }
