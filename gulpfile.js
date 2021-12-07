@@ -54,7 +54,7 @@ function generateThemePackageJson() {
 
 function generateThemeBunddle() {
   return generateBunddle(
-    ['./.temp/**/**.css', './src/theme/**/**.css'],
+    ['./src/theme/common/**/**.css', './.temp/**/**.css', './src/theme/components/**/**.css'],
     themeFileName,
     buildDestTheme
   );
