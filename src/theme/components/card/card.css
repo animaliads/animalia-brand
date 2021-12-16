@@ -5,11 +5,13 @@ ani-card {
     --border-width: var(--border-width-sm);
     --padding: 1em;
 
+    --shadow:var(--shadow-md);
+
     --background-selected: var(--color-brand-01-lightest);
     --border-color-selected: var(--color-action-default);
 
     --border-color-hover: var(--color-action-hover);
-    --shadow: var(--shadow-lg);
+    --shadow-hover: var(--shadow-lg);
 
     --color-focused: var(--color-action-default);
     --outline-color-focused: var(--color-action-focus);
