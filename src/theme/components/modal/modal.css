@@ -1,0 +1,13 @@
+ani-modal{
+    --border-radius: var(--border-radius-md);   
+    --border-width: var(--border-width-sm);   
+    --border-color: var(--color-neutral-light-20);   
+    --background: var(--color-neutral-light-00);   
+    --shadow: var(--shadow-md);   
+
+    --color-overlay: var(--color-neutral-dark-80);
+    --opacity-overlay: 0.7;
+    
+    --color-divider: var(--color-neutral-light-20);
+
+}
