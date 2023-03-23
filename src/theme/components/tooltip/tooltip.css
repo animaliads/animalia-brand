@@ -1,0 +1,9 @@
+ani-tooltip {
+    --background-color: var(--color);
+
+    --border-radius: var(--border-radius);
+
+    --font-family: var(--font-family);
+    
+    --color: var(--text-color);
+}
