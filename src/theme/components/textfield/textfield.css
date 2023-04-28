@@ -19,4 +19,7 @@ ani-textfield {
     --color-disabled: var(--color-action-disabled);
     --background-disabled: var(--color-neutral-light-20);
     --text-color-disabled: var(--color-neutral-dark-70);
+
+    --error-color: var(--color-feedback-negative-dark);
+    --error-text-margin: 1em;
 }
